@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<!-- non framed -->
+<head>
+<title>~[text:psx.html.admin_tech_dde.home.direct_database_export_dde]</title>
+<link href="/images/css/screen.css" rel="stylesheet" media="screen">
+<link href="/images/css/print.css" rel="stylesheet" media="print">
+~[wc:commonscripts]
+<script type="text/javascript" src="/scripts/c_dde-ext.js" ></script>
+</head>
+<body>
+ ~[wc:usm_comp_popup] 
+<form action="home.html" method="post">
+~[wc:admin_header_css]
+<!-- breadcrumb start -->
+<a href="/admin/home.html" target="_top">~[text:psx.html.admin_tech_dde.home.start_page]</a> &gt; <a href="/admin/tech/home.html">~[text:psx.html.admin_tech_dde.home.system_administrator]</a> &gt; ~[text:psx.html.admin_tech_dde.home.direct_database_export_dde1]
+<!-- breadcrumb end -->
+~[wc:admin_navigation_css] 
+<!-- start of title -->
+<h1>~[text:psx.html.admin_tech_dde.home.direct_database_export_dde2]</h1>
+<!-- end of title -->
+<!-- start of content and bounding box -->
+<div class="box-round">
+~[x:usm] 
+<fieldset>
+<div>
+<label>~[text:psx.html.admin_tech_dde.home.current_table]</label>[filepopup]
+</div>
+<div>
+<label>~[text]psx.html.admin_tech_dde.home.current_records_in_selection__nbsp_nbsp,param:</label> ~[x:usmnumrecs][/text]
+</div>
+<div>
+<p>
+~[if.~[x:usmnumrecs]=0]
+    ~[text:psx.html.admin_tech_dde.home.list_view_nbsp_table_view]
+[else] 
+<a href="listrecords.html">~[text:psx.html.admin_tech_dde.home.list_view]</a>
+&nbsp; &nbsp;
+<a href="listrecordstable.html">~[text:psx.html.admin_tech_dde.home.table_view]</a>
+[/if]
+&nbsp; &nbsp;
+~[if.~[x:usmnumrecs]=0]
+    ~[text:psx.html.admin_tech_dde.home.export_records_nbsp_nbsp_match_selection]
+[else] 
+<a href="exportrecords.html">~[text:psx.html.admin_tech_dde.home.export_records]</a>
+&nbsp; &nbsp; 
+<a href="matchselection.html">~[text:psx.html.admin_tech_dde.home.match_selection]</a>
+&nbsp; &nbsp;
+[/if] 
+<a href="tableviewsetup.html">~[text:psx.html.admin_tech_dde.home.table_view_setup]</a>
+</p>
+</div>
+</fieldset>
+<div class="button-row">
+<input type="submit" name="searchselectall" value="~[text:psx.html.admin_tech_dde.home.select_all__records_in_this_table,param:~[rif;~[x:usmfilenum]]] ">
+</div>
+<h2>~[text]psx.html.admin_tech_dde.home.search,param:~[x:usmfilename][/text]</h2>
+<fieldset class="inline">
+<div>
+	<span class="col3">
+	    [fieldpopup2_1] 
+	</span>
+	<span class="col3">
+		<select name="comparator1" style="width: 100px">
+			<option value="=">=</option>
+			<option value="&lt;">&lt;</option>
+			<option value="&gt;">&gt;</option>
+			<option value="&lt;=">&lt;=</option>
+			<option value="&gt;=">&gt;=</option>
+			<option value="#">#</option>
+			<option value="$">~[text:psx.html.admin_tech_dde.home.contains]</option>
+			<option value="!$">~[text:psx.html.admin_tech_dde.home.contain]</option>
+		</select>
+	</span>
+	<span class="col3">
+	    <input type="text" name="value" value="" size="18">
+	</span>
+</div>
+<div id="search-template">
+	<span class="col3">
+		[fieldpopup2_2] 
+	</span>
+	<span class="col3">
+		<select name="comparator2" style="width: 100px">
+			<option value="=">=</option>
+			<option value="&lt;">&lt;</option>
+			<option value="&gt;">&gt;</option>
+			<option value="&lt;=">&lt;=</option>
+			<option value="&gt;=">&gt;=</option>
+			<option value="#">#</option>
+			<option value="$">~[text:psx.html.admin_tech_dde.home.contains1]</option>
+			<option value="!$">~[text:psx.html.admin_tech_dde.home.contain1]</option>
+		</select>
+	</span>
+	<span class="col3">
+	    <input type="text" name="value" value="" size="18">
+	</span>
+</div>
+<div>
+<input type="checkbox" name="applyschoolfilter" value="value">~[text]psx.html.admin_tech_dde.home.search_only_in_records_belonging_to,param:~[x:schoolname][/text]</td>
+</div>
+</fieldset>
+<input type="hidden" name="ac" value="usm">
+<div class="button-row">
+<input type="submit" name="search" value="~[text:psx.html.admin_tech_dde.home.search_all__records_in_this_table,param:~[rif;~[x:usmfilenum]]]">
+<input type="submit" name="searchselection" value="~[text]psx.html.admin_tech_dde.home.search_within_the_current__records_only,param:~[x:usmnumrecs][/text]">
+</div>
+</div>
+
+<!-- end of content of bounding box -->
+[fieldpopup_typearray] ~[wc:admin_footer_css] 
+</form>
+<!-- non framed -->
+</body>
+</html>
